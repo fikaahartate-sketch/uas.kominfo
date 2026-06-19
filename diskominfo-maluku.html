@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beranda — Dinas Komunikasi dan Informatika Provinsi Maluku</title>
+<style>
+/* =====================================================
+   Diskominfo Provinsi Maluku — Stylesheet
+   Palette terinspirasi laut & rempah Maluku:
+   - Navy laut dalam, biru laut cerah, putih karang, emas pala
+   ===================================================== */
+
+:root{
+  --navy-deep: #0b2e4f;
+  --navy: #0e3a63;
+  --sea-blue: #1f6f9b;
+  --sea-light: #5aa8c9;
+  --coral-white: #f7f5ef;
+  --sand: #efe8d8;
+  --nutmeg-gold: #c8932b;
+  --nutmeg-gold-dark: #a8761c;
+  --ink: #1c2a33;
+  --ink-soft: #4b5b66;
+  --line: #dfe3e2;
+  --radius: 4px;
+
+  --font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", "Segoe UI", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:var(--coral-white);
+  line-height:1.6;
+}
+img{max-width:100%; display:block;}
+a{color:inherit; text-decoration:none;}
+h1,h2,h3,h4{
+  font-family:var(--font-display);
+  color:var(--navy-deep);
+  margin:0 0 .5em 0;
+  line-height:1.2;
+}
+p{margin:0 0 1em 0; color:var(--ink-soft);}
+.container{
+  max-width:1140px;
+  margin:0 auto;
+  padding:0 24px;
+}
+.eyebrow{
+  font-family:var(--font-mono);
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-size:.72rem;
+  color:var(--nutmeg-gold-dark);
+  font-weight:600;
+}
+
+/* ===== Top info bar ===== */
+.topbar{
+  background:var(--navy-deep);
+  color:#cfe0ec;
+  font-size:.78rem;
+}
+.topbar .container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding-top:6px;
+  padding-bottom:6px;
+  flex-wrap:wrap;
+  gap:6px;
+}
+.topbar a{color:#cfe0ec;}
+
+/* ===== Header / Nav ===== */
+header.site-header{
+  background:var(--navy);
+  border-bottom:3px solid var(--nutmeg-gold);
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+.nav-wrap{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 0;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:#fff;
+}
+.brand-logo{
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:var(--sand);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:var(--font-display);
+  font-weight:700;
+  color:var(--navy-deep);
+  font-size:1rem;
+  flex:none;
+  /* GANTI/ TAMBAHKAN <img src="..."> logo resmi Pemprov Maluku & Diskominfo di sini jika tersedia */
+}
+.brand-text .t1{
+  font-size:.74rem;
+  letter-spacing:.04em;
+  color:#bcd2e2;
+  text-transform:uppercase;
+}
+.brand-text .t2{
+  font-family:var(--font-display);
+  font-size:1.18rem;
+  font-weight:700;
+  color:#fff;
+}
+nav.main-nav ul{
+  list-style:none;
+  display:flex;
+  gap:6px;
+  margin:0;
+  padding:0;
+}
+nav.main-nav a{
+  color:#dce8f0;
+  font-size:.92rem;
+  font-weight:500;
+  padding:10px 14px;
+  border-radius:var(--radius);
+  display:inline-block;
+}
+nav.main-nav a:hover,
+nav.main-nav a.active{
+  background:rgba(255,255,255,.1);
+  color:#fff;
+}
+nav.main-nav a.active{
+  box-shadow:inset 0 -3px 0 var(--nutmeg-gold);
+}
+.nav-toggle{display:none;}
+
+@media (max-width: 880px){
+  .nav-toggle{
+    display:block;
+    background:none;
+    border:1px solid rgba(255,255,255,.4);
+    color:#fff;
+    font-size:1.3rem;
+    padding:4px 10px;
+    border-radius:var(--radius);
+    cursor:pointer;
+  }
+  nav.main-nav{
+    display:none;
+    width:100%;
+    order:3;
+  }
+  nav.main-nav.open{display:block;}
+  nav.main-nav ul{flex-direction:column; padding:10px 0;}
+  .nav-wrap{flex-wrap:wrap;}
+}
+
+/* ===== Hero ===== */
+.hero{
+  position:relative;
+  background:linear-gradient(160deg, var(--navy-deep) 0%, var(--navy) 55%, var(--sea-blue) 100%);
+  color:#fff;
+  overflow:hidden;
+}
+.hero .container{
+  padding-top:64px;
+  padding-bottom:64px;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:40px;
+  align-items:center;
+  position:relative;
+  z-index:2;
+}
+.hero h1{
+  color:#fff;
+  font-size:2.6rem;
+  margin-bottom:.4em;
+}
+.hero p.lead{
+  color:#cfe0ec;
+  font-size:1.05rem;
+  max-width:46ch;
+}
+.hero-waves{
+  position:absolute;
+  bottom:-2px; left:0; right:0;
+  height:70px;
+  background:
+    radial-gradient(circle at 10% 100%, transparent 18px, var(--coral-white) 19px) 0 0/60px 100%,
+    radial-gradient(circle at 90% 100%, transparent 18px, transparent 19px) 0 0/60px 100%;
+  opacity:.0;
+}
+.hero-photo{
+  border:6px solid rgba(255,255,255,.15);
+  border-radius:6px;
+  overflow:hidden;
+  aspect-ratio:4/3;
+  background:#0a2540 url('') center/cover no-repeat;
+}
+.hero-photo .ph-inner{
+  width:100%; height:100%;
+  display:flex; align-items:center; justify-content:center;
+  color:#9fb9cb; font-size:.8rem; text-align:center; padding:20px;
+  background:repeating-linear-gradient(45deg, #0e3a63, #0e3a63 10px, #123f6b 10px, #123f6b 20px);
+}
+
+.btn{
+  display:inline-block;
+  padding:12px 22px;
+  border-radius:var(--radius);
+  font-weight:600;
+  font-size:.92rem;
+  border:1px solid transparent;
+  cursor:pointer;
+}
+.btn-gold{
+  background:var(--nutmeg-gold);
+  color:#2a1d04;
+}
+.btn-gold:hover{background:var(--nutmeg-gold-dark); color:#fff;}
+.btn-outline{
+  border-color:rgba(255,255,255,.5);
+  color:#fff;
+}
+.btn-outline:hover{background:rgba(255,255,255,.12);}
+.btn-row{display:flex; gap:12px; margin-top:18px; flex-wrap:wrap;}
+
+/* ===== Page header (non-home pages) ===== */
+.page-header{
+  background:linear-gradient(120deg, var(--navy-deep), var(--sea-blue));
+  color:#fff;
+  padding:48px 0;
+}
+.page-header .eyebrow{color:#a9d0e3;}
+.page-header h1{color:#fff; margin-bottom:.2em;}
+.page-header p{color:#cfe0ec; max-width:60ch; margin:0;}
+.breadcrumb{
+  font-size:.8rem;
+  color:#a9d0e3;
+  margin-bottom:10px;
+}
+.breadcrumb a{color:#fff; opacity:.8;}
+.breadcrumb a:hover{opacity:1;}
+
+/* ===== Sections ===== */
+section{
+  padding:64px 0;
+}
+section.alt{
+  background:var(--sand);
+}
+.section-head{
+  max-width:680px;
+  margin-bottom:36px;
+}
+.section-head h2{font-size:1.9rem;}
+
+/* ===== Cards / Grids ===== */
+.grid{
+  display:grid;
+  gap:24px;
+}
+.grid-3{grid-template-columns:repeat(3,1fr);}
+.grid-2{grid-template-columns:repeat(2,1fr);}
+.grid-4{grid-template-columns:repeat(4,1fr);}
+@media (max-width:900px){
+  .grid-3,.grid-4{grid-template-columns:repeat(2,1fr);}
+  .hero .container{grid-template-columns:1fr;}
+}
+@media (max-width:600px){
+  .grid-2,.grid-3,.grid-4{grid-template-columns:1fr;}
+}
+
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:26px;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 24px rgba(11,46,79,.08);
+}
+.card .num{
+  font-family:var(--font-mono);
+  color:var(--nutmeg-gold-dark);
+  font-size:.78rem;
+  letter-spacing:.08em;
+}
+.card h3{font-size:1.1rem; margin:.3em 0 .4em;}
+.card p{margin:0; font-size:.92rem;}
+.card-icon{
+  width:42px; height:42px;
+  border-radius:50%;
+  background:var(--sand);
+  display:flex; align-items:center; justify-content:center;
+  margin-bottom:14px;
+  color:var(--sea-blue);
+  font-weight:700;
+  font-family:var(--font-display);
+}
+
+/* photo placeholder block */
+.photo-frame{
+  background:#0e3a63;
+  border-radius:var(--radius);
+  overflow:hidden;
+  aspect-ratio:4/3;
+  position:relative;
+}
+.photo-frame img{
+  width:100%; height:100%; object-fit:cover;
+}
+.photo-placeholder{
+  width:100%; height:100%;
+  display:flex; align-items:center; justify-content:center;
+  text-align:center;
+  padding:18px;
+  color:#a9c4d8;
+  font-size:.78rem;
+  background:repeating-linear-gradient(45deg, #0e3a63, #0e3a63 12px, #123f6b 12px, #123f6b 24px);
+}
+.photo-caption{
+  font-size:.78rem;
+  color:var(--ink-soft);
+  margin-top:8px;
+}
+
+/* ===== Org chart ===== */
+.org-chart{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+}
+.org-node{
+  background:#fff;
+  border:1px solid var(--line);
+  border-left:4px solid var(--nutmeg-gold);
+  border-radius:var(--radius);
+  padding:14px 20px;
+  text-align:center;
+  min-width:220px;
+  box-shadow:0 2px 6px rgba(11,46,79,.05);
+}
+.org-node.top{border-left-color:var(--navy-deep); background:var(--navy-deep); color:#fff;}
+.org-node.top h4{color:#fff;}
+.org-node h4{margin:0; font-size:.95rem;}
+.org-node span{font-size:.75rem; color:var(--ink-soft);}
+.org-connector{width:2px; height:20px; background:var(--line);}
+.org-row{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.bidang-list{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+@media (max-width:700px){.bidang-list{grid-template-columns:1fr;}}
+.bidang-item{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:22px;
+}
+.bidang-item h3{
+  font-size:1.05rem;
+  display:flex; align-items:center; gap:10px;
+}
+.bidang-item h3 .tag{
+  font-family:var(--font-mono);
+  font-size:.7rem;
+  background:var(--sand);
+  color:var(--nutmeg-gold-dark);
+  padding:3px 8px;
+  border-radius:2px;
+}
+.bidang-item ul{
+  margin:10px 0 0;
+  padding-left:18px;
+  color:var(--ink-soft);
+  font-size:.9rem;
+}
+.bidang-item li{margin-bottom:4px;}
+
+/* ===== Stats strip ===== */
+.stats{
+  background:var(--navy-deep);
+  color:#fff;
+}
+.stats .grid-4{text-align:center;}
+.stats .stat-num{
+  font-family:var(--font-display);
+  font-size:2.1rem;
+  color:var(--nutmeg-gold);
+}
+.stats .stat-label{font-size:.82rem; color:#bcd2e2; margin-top:4px;}
+
+/* ===== Table ===== */
+table.simple{
+  width:100%;
+  border-collapse:collapse;
+  background:#fff;
+}
+table.simple th, table.simple td{
+  text-align:left;
+  padding:12px 14px;
+  border-bottom:1px solid var(--line);
+  font-size:.92rem;
+}
+table.simple th{
+  background:var(--navy-deep);
+  color:#fff;
+  font-weight:600;
+}
+
+/* ===== Documentation gallery ===== */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+@media (max-width:760px){.gallery{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:480px){.gallery{grid-template-columns:1fr;}}
+.gallery figure{margin:0;}
+.gallery figcaption{
+  font-size:.82rem;
+  color:var(--ink-soft);
+  margin-top:8px;
+}
+.gallery figcaption .date{
+  display:block;
+  font-family:var(--font-mono);
+  font-size:.7rem;
+  color:var(--nutmeg-gold-dark);
+  margin-bottom:2px;
+}
+
+/* ===== CTA band ===== */
+.cta-band{
+  background:linear-gradient(120deg, var(--sea-blue), var(--navy));
+  color:#fff;
+  padding:48px 0;
+  text-align:center;
+}
+.cta-band h2{color:#fff;}
+.cta-band p{color:#d6e7f0;}
+
+/* ===== Footer ===== */
+footer.site-footer{
+  background:var(--navy-deep);
+  color:#bcd2e2;
+  padding:48px 0 20px;
+  font-size:.88rem;
+}
+footer.site-footer h4{color:#fff; font-size:.95rem; margin-bottom:14px;}
+footer.site-footer a{color:#bcd2e2;}
+footer.site-footer a:hover{color:#fff;}
+.footer-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1.2fr;
+  gap:28px;
+  padding-bottom:28px;
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+@media (max-width:760px){.footer-grid{grid-template-columns:1fr 1fr;}}
+.footer-grid ul{list-style:none; margin:0; padding:0;}
+.footer-grid li{margin-bottom:8px;}
+.footer-bottom{
+  padding-top:18px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:8px;
+  font-size:.78rem;
+  color:#88a3b6;
+}
+
+/* ===== Misc ===== */
+.divider-gold{
+  height:3px;
+  width:60px;
+  background:var(--nutmeg-gold);
+  margin:14px 0 24px;
+}
+.two-col{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:40px;
+  align-items:start;
+}
+@media (max-width:880px){.two-col{grid-template-columns:1fr;}}
+
+
+.page{animation: fadeIn .25s ease;}
+@keyframes fadeIn{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);}}
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="#beranda" data-nav="beranda">
+      <div class="brand-logo">
+        <!-- FOTO MANUAL: taruh logo resmi Diskominfo Provinsi Maluku di sini -->
+        <!-- Caranya: hapus <span> di bawah, lalu pakai -> <img src="assets/img/logo.png" alt="Logo Diskominfo Maluku" style="width:100%;height:100%;object-fit:contain;"> -->
+        <img src="logo.jpg" alt="style=width:100%;height:100%;object-fit:contain;">
+      </div>
+      <div class="brand-text">
+        <div class="t1">Pemerintah Provinsi Maluku</div>
+        <div class="t2">Dinas Komunikasi &amp; Informatika</div>
+      </div>
+    </a>
+    <button class="nav-toggle" aria-label="Buka menu">&#9776;</button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#beranda" data-nav="beranda" class="active">Beranda</a></li>
+        <li><a href="#profil" data-nav="profil">Profil</a></li>
+        <li><a href="#struktur" data-nav="struktur">Struktur Organisasi</a></li>
+        <li><a href="#layanan" data-nav="layanan">Layanan</a></li>
+        <li><a href="#sistem" data-nav="sistem">Sistem Informasi</a></li>
+        <li><a href="#dokumentasi" data-nav="dokumentasi">Dokumentasi</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+<main>
+
+<div class="page" id="page-beranda" data-page="beranda" style="display:block;">
+<section class="hero">
+  <div class="container">
+    <div>
+      <div class="eyebrow" style="color:#a9d0e3;">Selamat Datang</div>
+      <h1>Mewujudkan Maluku yang Terhubung, Transparan, dan Melayani Digital</h1>
+      <p class="lead">Dinas Komunikasi dan Informatika Provinsi Maluku mengelola komunikasi publik, statistik, persandian, dan layanan informatika untuk mendukung tata kelola pemerintahan yang baik di seluruh kepulauan Maluku.</p>
+      <div class="btn-row">
+        <a href="#profil" data-nav="profil" class="btn btn-gold">Tentang Kami</a>
+        <a href="#layanan" data-nav="layanan" class="btn btn-outline">Lihat Layanan</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <div class=>
+        <img src="kominfo.jpg" alt="Kantor Diskominfo Maluku">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Profil Singkat</div>
+      <h2>Tugas dan Fungsi Utama</h2>
+      <div class="divider-gold"></div>
+      <p>Diskominfo Provinsi Maluku menyelenggarakan urusan pemerintahan di bidang komunikasi dan informatika, statistik, serta persandian untuk mendukung keterbukaan informasi publik dan transformasi digital daerah.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="card-icon">01</div>
+        <h3>Komunikasi Publik</h3>
+        <p>Mengelola informasi dan komunikasi publik Pemerintah Provinsi Maluku kepada masyarakat melalui berbagai kanal media.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">02</div>
+        <h3>Aplikasi &amp; Informatika</h3>
+        <p>Mengembangkan dan mengelola sistem informasi serta infrastruktur teknologi informasi pemerintahan daerah.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">03</div>
+        <h3>Statistik &amp; Persandian</h3>
+        <p>Menyediakan data statistik sektoral serta menjamin keamanan informasi melalui persandian pemerintahan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Dokumentasi</div>
+      <h2>Dokumentasi Kegiatan</h2>
+      <div class="divider-gold"></div>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="photo-frame" style="margin-bottom:14px;">
+          <div class="photo-placeholder">
+            <!-- GANTI: foto observasi 1, mis. <img src="assets/img/observasi1.jpg" alt="Foto observasi Kominfo"> -->
+            <img src="foto1.jpg" alt="Foto observasi Kominfo">
+          </div>
+        </div>
+        <p style="margin:0; font-size:.88rem;">Foto observasi Kominfo</p>
+      </div>
+      <div class="card">
+        <div class="photo-frame" style="margin-bottom:14px;">
+          <div class="photo-placeholder">
+            <!-- GANTI: foto observasi 2 -->
+            <img src="foto3.jpg" alt="Foto observasi Kominfo">
+          </div>
+        </div>
+        <p style="margin:0; font-size:.88rem;">Foto observasi Kominfo</p>
+      </div>
+      <div class="card">
+        <div class="photo-frame" style="margin-bottom:14px;">
+          <div class="photo-placeholder">
+            <!-- GANTI: foto observasi 3 -->
+            <img src="foto2.jpg" alt="Foto observasi Kominfo">
+          </div>
+        </div>
+        <p style="margin:0; font-size:.88rem;">Foto observasi Kominfo</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:32px;">
+      <a href="#dokumentasi" data-nav="dokumentasi" class="btn btn-gold">Lihat Semua Dokumentasi</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Butuh Layanan atau Informasi?</h2>
+    <p>Akses layanan publik dan sistem informasi Diskominfo Provinsi Maluku dengan mudah dan cepat.</p>
+    <div class="btn-row" style="justify-content:center;">
+      <a href="#layanan" data-nav="layanan" class="btn btn-gold">Layanan Publik</a>
+      <a href="#sistem" data-nav="sistem" class="btn btn-outline">Sistem Informasi</a>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="page" id="page-profil" data-page="profil" style="display:none;">
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="#beranda" data-nav="beranda">Beranda</a> / Profil</div>
+    <div class="eyebrow">Tentang Kami</div>
+    <h1>Profil Dinas Komunikasi dan Informatika</h1>
+    <p>Mengenal visi, misi, tugas pokok, dan fungsi Diskominfo Provinsi Maluku dalam mendukung tata kelola pemerintahan digital.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="eyebrow">Visi</div>
+        <h3>Maluku Terhubung &amp; Informatif</h3>
+        <p>Transformasi Maluku Menuju Maluku Yang Maju, Adil, dan Sejahtera Menyongsong Indonesia Emas 2045.</p>
+        <!-- GANTI: rumusan visi resmi sesuai Renstra Diskominfo Maluku terbaru -->
+      </div>
+      <div class="card">
+        <div class="eyebrow">Misi</div>
+        <h3>Arah Yang Strategis</h3>
+        <ul style="color:var(--ink-soft); padding-left:18px; margin:0;">
+          <li>Peningkatan tata kelola pemerintahan dan pelayanan publik secara adil, inklusif, transparan dan akuntabel.</li>
+          <li>Pengentasan kemiskinan dan penurunan tingkat pengangguran melalui kebijakan yang tepat sasaran, efisien dan efektif.</li>
+          <li>Memperkuat pembangunan sumber daya manusia, sains, teknologi, pendidikan, kesehatan, prestasi olahraga, kesetaraan gender serta penguatan peran perempuan, pemuda dan penyandang disabilitas.</li>
+          <li>Peningkatan kuantitas dan kualitas infrastruktur dasar serta transportasi dan telekomunikasi untuk memperlancar konektivitas antar wilayah.</li>
+          <li>Pengelolaan lingkungan kawasan pesisir dan pulau-pulau kecil, sumber daya alam yang berkelanjutan, adaptasi dan mitigasi dampak perubahan iklim serta ketahanan bencana.</li>
+          <li>Peningkatan pertumbuhan ekonomi yang inklusif melalui hilirisasi komoditas unggulan, pemberian insentif usaha mikro, kecil dan menengah (UMKM), membuka aksesibilitas pasar dan mengurangi disparitas antar wilayah.</li>
+          <li>Penataan dan revitalisasi lembaga sosial kemasyarakatan dalam semangat hidup orang basudara, berbasis adat budaya dan kearifan lokal serta ketaatan dan kepatuhan terhadap hukum.</li>
+        </ul>
+        <!-- GANTI: rumusan misi resmi sesuai Renstra Diskominfo Maluku terbaru -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Pelayanan Informasi</div>
+      <h2>Jam Pelayanan Informasi</h2>
+      <div class="divider-gold"></div>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Senin s/d Kamis</h3>
+        <p>09.00 - 15.00 WIB</p>
+        <p>Istirahat, Sholat, Makan: 12.00 - 13.00 WIB</p>
+      </div>
+      <div class="card">
+        <h3>Jum'at</h3>
+        <p>09.00 - 15.00 WIB</p>
+        <p>Istirahat, Sholat, Makan: 11.00 - 13.00 WIB</p>
+      </div>
+    </div>
+
+    <div class="section-head" style="margin-top:48px;">
+      <div class="eyebrow">Komitmen Layanan</div>
+      <h2>Maklumat Pelayanan Informasi Publik</h2>
+      <div class="divider-gold"></div>
+      <p>Kami berupaya memberikan Pelayanan Informasi Publik dengan sungguh-sungguh untuk dapat:</p>
+    </div>
+
+    <div class="card">
+      <ol style="color:var(--ink-soft); padding-left:18px; margin:0;">
+        <li>Memberikan Pelayanan informasi yang cepat dan tepat waktu.</li>
+        <li>Memberikan kemudahan dalam mendapatkan informasi publik bidang komunikasi dan informatika yang diperlukan dengan murah dan sederhana.</li>
+        <li>Menyediakan dan memberikan informasi publik yang akurat, benar, dan tidak menyesatkan.</li>
+        <li>Menyediakan daftar informasi publik untuk informasi yang wajib disediakan dan diumumkan.</li>
+        <li>Menjamin penggunaan seluruh informasi publik dan fasilitas pelayanan sesuai dengan ketentuan dan tata tertib yang berlaku.</li>
+        <li>Menyiapkan ruang dan fasilitas yang nyaman dan tertata baik.</li>
+        <li>Merespon dengan cepat permintaan informasi dan keberatan atas informasi publik disampaikan baik langsung maupun melalui media.</li>
+        <li>Menyiapkan petugas informasi yang berdedikasi dan siap melayani.</li>
+        <li>Melakukan pengawasan internal dan evaluasi kinerja pelaksana.</li>
+      </ol>
+      <p style="margin-top:18px; text-align:right; color:var(--ink-soft);">
+        Ambon, Januari 2020<br>
+        Kepala Dinas<br>
+        Selaku<br>
+        Pejabat Pengelola Informasi dan Dokumentasi
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Kenali Struktur Organisasi Kami</h2>
+    <p>Pelajari susunan kepala dinas, sekretariat, dan bidang-bidang yang menjalankan tugas Diskominfo Maluku.</p>
+    <a href="#struktur" data-nav="struktur" class="btn btn-gold">Struktur Organisasi</a>
+  </div>
+</section>
+</div>
+
+<div class="page" id="page-struktur" data-page="struktur" style="display:none;">
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="#beranda" data-nav="beranda">Beranda</a> / Struktur Organisasi</div>
+    <div class="eyebrow">Susunan Organisasi</div>
+    <h1>Struktur Organisasi dan Bidang</h1>
+    <p>Susunan organisasi Diskominfo Provinsi Maluku terdiri atas Kepala Dinas, Sekretariat, dan empat bidang teknis yang menjalankan tugas pokok dan fungsi dinas.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Bagan</div>
+      <h2>Bagan Struktur Organisasi</h2>
+      <div class="divider-gold"></div>
+    </div>
+
+    <div class="photo-frame" style="aspect-ratio:3/4; max-width:480px; margin:0 auto;">
+      <div class="photo-placeholder">
+        <!-- FOTO MANUAL: ganti dengan gambar bagan struktur organisasi -->
+        <!-- Contoh: <img src="assets/img/bagan-struktur.jpg" alt="Bagan Struktur Organisasi Diskominfo Maluku"> -->
+      <img src="bagan.jpg" alt="Bagan Struktur Organisasi Diskominfo Maluku">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Tugas Per Bidang</div>
+      <h2>Bidang-Bidang Diskominfo Maluku</h2>
+      <div class="divider-gold"></div>
+      <p>Empat bidang teknis menjalankan fungsi operasional dinas, masing-masing membawahi seksi-seksi sesuai keahliannya.</p>
+    </div>
+
+    <div class="bidang-list">
+      <div class="bidang-item">
+        <h3><span class="tag">Bidang 01</span> Informasi &amp; Komunikasi Publik</h3>
+        <p>Mengelola pengelolaan informasi publik, pengelolaan media komunikasi publik, dan kemitraan media.</p>
+        <ul>
+          <li>Seksi Pengelolaan Informasi Publik</li>
+          <li>Seksi Pengelolaan Media Komunikasi Publik</li>
+          <li>Seksi Kemitraan Komunikasi Publik</li>
+        </ul>
+      </div>
+      <div class="bidang-item">
+        <h3><span class="tag">Bidang 02</span> Aplikasi Informatika</h3>
+        <p>Mengembangkan dan mengelola aplikasi serta sistem informasi pemerintahan daerah.</p>
+        <ul>
+          <li>Seksi Pengembangan Aplikasi</li>
+          <li>Seksi Tata Kelola e-Government</li>
+          <li>Seksi Pemberdayaan Informatika</li>
+        </ul>
+      </div>
+      <div class="bidang-item">
+        <h3><span class="tag">Bidang 03</span> Infrastruktur &amp; Teknologi Informasi</h3>
+        <p>Mengelola infrastruktur jaringan, pusat data, dan layanan teknologi informasi pemerintahan.</p>
+        <ul>
+          <li>Seksi Infrastruktur Teknologi Informasi</li>
+          <li>Seksi Pengelolaan Data Center</li>
+          <li>Seksi Keamanan Informasi</li>
+        </ul>
+      </div>
+      <div class="bidang-item">
+        <h3><span class="tag">Bidang 04</span> Statistik &amp; Persandian</h3>
+        <p>Menyediakan data statistik sektoral dan menjamin keamanan komunikasi pemerintahan.</p>
+        <ul>
+          <li>Seksi Statistik Sektoral</li>
+          <li>Seksi Persandian</li>
+          <li>Seksi Pengamanan Informasi</li>
+        </ul>
+      </div>
+    </div>
+    <!-- GANTI: rincian seksi & nama pejabat sesuai SOTK resmi terbaru -->
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Lihat Layanan yang Kami Sediakan</h2>
+    <p>Setiap bidang mendukung berbagai layanan publik dan sistem informasi yang dapat diakses masyarakat.</p>
+    <a href="#layanan" data-nav="layanan" class="btn btn-gold">Lihat Layanan</a>
+  </div>
+</section>
+</div>
+
+<div class="page" id="page-layanan" data-page="layanan" style="display:none;">
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="#beranda" data-nav="beranda">Beranda</a> / Layanan</div>
+    <div class="eyebrow">Layanan Publik</div>
+    <h1>Layanan Diskominfo Provinsi Maluku</h1>
+    <p>Berbagai layanan publik yang disediakan untuk mendukung keterbukaan informasi, komunikasi, dan transformasi digital di Provinsi Maluku.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="card-icon">01</div>
+        <h3>Pelayanan Informasi Publik (PPID)</h3>
+        <p>Layanan permohonan informasi publik bagi masyarakat sesuai prinsip keterbukaan informasi, dikelola oleh PPID Diskominfo Maluku.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">02</div>
+        <h3>Pengaduan Masyarakat</h3>
+        <p>Kanal pengaduan dan aspirasi masyarakat terkait layanan pemerintahan Provinsi Maluku secara daring.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">03</div>
+        <h3>Layanan Persuratan Elektronik</h3>
+        <p>Fasilitasi pengelolaan surat-menyurat dinas secara elektronik antar perangkat daerah.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">04</div>
+        <h3>Konsultasi Tata Kelola TIK</h3>
+        <p>Pendampingan teknis bagi OPD dalam pengembangan dan keamanan sistem informasi pemerintahan.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">05</div>
+        <h3>Penyediaan Data Statistik Sektoral</h3>
+        <p>Layanan akses data dan statistik sektoral daerah untuk mendukung perencanaan pembangunan.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">06</div>
+        <h3>Kerja Sama Media &amp; Publikasi</h3>
+        <p>Layanan kemitraan media, peliputan, dan publikasi kegiatan Pemerintah Provinsi Maluku.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Alur Layanan</div>
+      <h2>Cara Mengakses Layanan</h2>
+      <div class="divider-gold"></div>
+    </div>
+    <div class="grid grid-4">
+      <div class="card">
+        <div class="card-icon">1</div>
+        <h3>Ajukan Permohonan</h3>
+        <p>Sampaikan permohonan melalui kanal resmi: datang langsung, surat, atau daring.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">2</div>
+        <h3>Verifikasi</h3>
+        <p>Petugas memverifikasi kelengkapan dan kesesuaian permohonan yang diajukan.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">3</div>
+        <h3>Proses</h3>
+        <p>Permohonan diproses oleh bidang terkait sesuai standar waktu pelayanan.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">4</div>
+        <h3>Hasil Layanan</h3>
+        <p>Pemohon menerima hasil layanan melalui kanal yang dipilih saat pengajuan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Akses Sistem Informasi Pendukung</h2>
+    <p>Sebagian layanan kami didukung oleh sistem informasi daring yang dapat diakses kapan saja.</p>
+    <a href="#sistem" data-nav="sistem" class="btn btn-gold">Sistem Informasi</a>
+  </div>
+</section>
+</div>
+
+<div class="page" id="page-sistem" data-page="sistem" style="display:none;">
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="#beranda" data-nav="beranda">Beranda</a> / Sistem Informasi</div>
+    <div class="eyebrow">Aplikasi &amp; Platform</div>
+    <h1>Sistem Informasi Diskominfo Maluku</h1>
+    <p>Beragam sistem informasi dan aplikasi yang dikembangkan untuk mendukung tata kelola pemerintahan digital di Provinsi Maluku.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="card-icon">SI</div>
+        <h3>SIPD — Sistem Informasi Pemerintahan Daerah</h3>
+        <p>Mendukung perencanaan, penganggaran, dan pelaporan keuangan pemerintah daerah secara terintegrasi.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">SI</div>
+        <h3>PPID Online</h3>
+        <p>Platform permohonan dan pelayanan informasi publik secara daring bagi masyarakat.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">SI</div>
+        <h3>Portal Data Statistik Sektoral</h3>
+        <p>Penyajian data statistik sektoral Provinsi Maluku untuk mendukung perencanaan pembangunan.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">SI</div>
+        <h3>Sistem Persuratan Elektronik</h3>
+        <p>Pengelolaan naskah dinas dan persuratan elektronik antar perangkat daerah.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">SI</div>
+        <h3>Aplikasi Pengaduan Masyarakat</h3>
+        <p>Kanal digital bagi masyarakat untuk menyampaikan pengaduan dan aspirasi layanan publik.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">SI</div>
+        <h3>Sistem Manajemen Website OPD</h3>
+        <p>Platform pengelolaan konten website resmi perangkat daerah se-Provinsi Maluku.</p>
+      </div>
+    </div>
+    <!-- GANTI: daftar sistem informasi sesuai aplikasi resmi & tautan aktif yang dimiliki Diskominfo Maluku -->
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Lihat Dokumentasi Kegiatan Kami</h2>
+    <p>Telusuri galeri kegiatan dan dokumentasi Diskominfo Provinsi Maluku.</p>
+    <a href="#dokumentasi" data-nav="dokumentasi" class="btn btn-gold">Dokumentasi</a>
+  </div>
+</section>
+</div>
+
+<div class="page" id="page-dokumentasi" data-page="dokumentasi" style="display:none;">
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="#beranda" data-nav="beranda">Beranda</a> / Dokumentasi</div>
+    <div class="eyebrow">Galeri Kegiatan</div>
+    <h1>Dokumentasi Kegiatan</h1>
+    <p>Kumpulan foto observasi kegiatan Dinas Komunikasi dan Informatika Provinsi Maluku.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="gallery">
+
+      <figure>
+        <div class="photo-frame">
+          <div class="photo-placeholder">
+            <!-- GANTI: foto observasi 1, mis. <img src="assets/img/observasi1.jpg" alt="Foto observasi Kominfo"> -->
+            <img src="foto1.jpg" alt="Foto observasi Kominfo">
+          </div>
+        </div>
+        <figcaption>Foto observasi Kominfo</figcaption>
+      </figure>
+
+      <figure>
+        <div class="photo-frame">
+          <div class="photo-placeholder">
+            <!-- GANTI: foto observasi 2 -->
+            <img src="foto3.jpg" alt="Foto observasi Kominfo">
+          </div>
+        </div>
+        <figcaption>Foto observasi Kominfo</figcaption>
+      </figure>
+
+      <figure>
+        <div class="photo-frame">
+          <div class="photo-placeholder">
+            <!-- GANTI: foto observasi 3 -->
+            <img src="foto2.jpg" alt="Foto observasi Kominfo">
+          </div>
+        </div>
+        <figcaption>Foto observasi Kominfo</figcaption>
+      </figure>
+
+      <figure>
+        <div class="photo-frame">
+          <div class="photo-placeholder">
+            <!-- GANTI: foto observasi 4 -->
+            <img src="foto4.jpg" alt="Foto observasi Kominfo">
+          </div>
+        </div>
+        <figcaption>Foto observasi Kominfo</figcaption>
+      </figure>
+
+      <figure>
+        <div class="photo-frame">
+          <div class="photo-placeholder">
+            <!-- GANTI: foto observasi 5 -->
+            <img src="foto5.jpg" alt="Foto observasi Kominfo">
+          </div>
+        </div>
+        <figcaption>Foto observasi Kominfo</figcaption>
+      </figure>
+
+      <figure>
+        <div class="photo-frame">
+          <div class="photo-placeholder">
+            <!-- GANTI: foto observasi 6 -->
+            <img src="foto6.jpg" alt="Foto observasi Kominfo">
+          </div>
+        </div>
+        <figcaption>Foto observasi Kominfo</figcaption>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Kembali ke Beranda</h2>
+    <p>Telusuri kembali profil, struktur organisasi, layanan, dan sistem informasi kami.</p>
+    <a href="#beranda" data-nav="beranda" class="btn btn-gold">Beranda</a>
+  </div>
+</section>
+</div>
+
+</main>
+
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Dinas Komunikasi &amp; Informatika Provinsi Maluku</h4>
+        <p style="color:#bcd2e2; font-size:.88rem;">Jln. Dr. Latumeten - Prigilima, Kota Ambon, Provinsi Maluku</p>
+      </div>
+      <div>
+        <h4>Tautan</h4>
+        <ul>
+          <li><a href="#profil" data-nav="profil">Profil</a></li>
+          <li><a href="#struktur" data-nav="struktur">Struktur Organisasi</a></li>
+          <li><a href="#layanan" data-nav="layanan">Layanan</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Lainnya</h4>
+        <ul>
+          <li><a href="#sistem" data-nav="sistem">Sistem Informasi</a></li>
+          <li><a href="#dokumentasi" data-nav="dokumentasi">Dokumentasi</a></li>
+          <li><a href="https://diskominfo.malukuprov.go.id/" target="_blank" rel="noopener">Situs Resmi</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Profil</h4>
+        <ul>
+          <!-- FOTO/DATA MANUAL: ganti dengan data diri kamu -->
+          <li>Nama: Fika Hartate</li>
+          <li>NIM: 240208014</li>
+          <li>Prodi: Sistem Informasi</li>
+          <li>Mata Kuliah: Analisis Beriontasi Object</Object></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Dinas Komunikasi dan Informatika Provinsi Maluku. Hak cipta dilindungi.</span>
+      <span>Ini bukan website resmi, dibuat untuk memenuhi ulangan akhir semester.</span>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function () {
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.querySelector('.main-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', function () {
+      nav.classList.toggle('open');
+    });
+  }
+
+  var pages = document.querySelectorAll('.page');
+  var navLinks = document.querySelectorAll('[data-nav]');
+
+  function showPage(key, doScroll) {
+    var found = false;
+    pages.forEach(function (p) {
+      if (p.dataset.page === key) {
+        p.style.display = 'block';
+        found = true;
+      } else {
+        p.style.display = 'none';
+      }
+    });
+    if (!found) {
+      // fallback ke beranda kalau hash tidak dikenali
+      pages.forEach(function (p) {
+        p.style.display = (p.dataset.page === 'beranda') ? 'block' : 'none';
+      });
+      key = 'beranda';
+    }
+    navLinks.forEach(function (a) {
+      if (a.dataset.nav === key) {
+        a.classList.add('active');
+      } else {
+        a.classList.remove('active');
+      }
+    });
+    if (nav) nav.classList.remove('open');
+    if (doScroll) window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+    document.title = labelFor(key) + ' — Dinas Komunikasi dan Informatika Provinsi Maluku';
+  }
+
+  function labelFor(key) {
+    var map = {
+      beranda: 'Beranda',
+      profil: 'Profil',
+      struktur: 'Struktur Organisasi',
+      layanan: 'Layanan',
+      sistem: 'Sistem Informasi',
+      dokumentasi: 'Dokumentasi'
+    };
+    return map[key] || 'Beranda';
+  }
+
+  navLinks.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var key = a.dataset.nav;
+      window.location.hash = key;
+      showPage(key, true);
+    });
+  });
+
+  function initFromHash() {
+    var key = (window.location.hash || '#beranda').replace('#', '');
+    showPage(key, false);
+  }
+
+  window.addEventListener('hashchange', function () {
+    var key = (window.location.hash || '#beranda').replace('#', '');
+    showPage(key, true);
+  });
+
+  initFromHash();
+});
+
+</script>
+</body>
+</html>
